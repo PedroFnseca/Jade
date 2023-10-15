@@ -1,21 +1,30 @@
 <template>
-  <div class="fullscreen bg-blue text-white text-center q-pa-md flex flex-center">
+  <div
+    class="fullscreen bg-primary text-white text-center q-pa-md flex flex-center"
+  >
     <div>
-      <div style="font-size: 30vh">
-        404
+      <q-img
+        src="/public/images/Dictionary-pana.png"
+        style="width: 300px"
+        class="q-mb-sm"
+        attributes="src: 'https://storyset.com/education'"
+      />
+
+      <div class="text-h4 q-mb-sm" style="opacity: 0.5">
+        Ops! Parece que você se perdeu na estante.
       </div>
 
-      <div class="text-h2" style="opacity:.4">
-        Oops. Nothing here...
+      <div class="text-h6" style="opacity: 0.6; q-mt-md">
+        A página que você está procurando não está catalogada aqui.
       </div>
 
       <q-btn
         class="q-mt-xl"
         color="white"
-        text-color="blue"
+        text-color="primary"
         unelevated
-        to="/"
-        label="Go Home"
+        label="Voltar para a prateleira anterior"
+        @click="$router.go(-1)"
         no-caps
       />
     </div>
@@ -23,9 +32,9 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue'
+import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: 'ErrorNotFound'
-})
+  name: "ErrorNotFound",
+});
 </script>
